@@ -1,6 +1,6 @@
 <template>
   <div class="p-5 border border-gray-200">
-    <form action="postreview">
+    <form @submit.prevent="clickpost">
       <h3 class="uppercase">Customer Review</h3>
       <div class="mt-2 text-sm">
         <select id="productversion" class="w-1/3 p-2 border border-gray-200">
@@ -18,6 +18,7 @@
         id="review"
         class="mt-2 w-full h-32 p-5 border border-gray-200 placeholder-grey-500"
         placeholder="Write your review..."
+        v-model="review"
       ></textarea>
 
       <input
@@ -38,6 +39,14 @@ export default {
       review: null,
     };
   },
-  method: {},
+  method: {
+    clickpost() {
+      let productReview ={
+        review: this.review
+      }  
+      this.$emit('click-post', productReview)
+      this.review=null
+    }
+  },
 };
 </script>
