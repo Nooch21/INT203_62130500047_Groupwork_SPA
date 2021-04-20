@@ -1,6 +1,8 @@
 <template>
   <div class="">
-    <div class="w-screen h-20 bg-red-200 text-center text-xl font-bold tracking-widest p-5">
+    <div
+      class="w-screen h-20 bg-red-200 text-center text-xl font-bold tracking-widest p-5"
+    >
       <HelloWorld msg="WayV" />
     </div>
     <div class="grid grid-cols-2">
@@ -38,46 +40,59 @@
             Add to Cart
           </button>
         </div>
-        <div class="p-5 border border-gray-200">
-          <form action="">
-            <h3 class="uppercase">Customer Review</h3>
-            <div class="mt-2 text-sm">
-              <select id="product-version" class="w-1/3 p-2 border border-gray-200">
-                <option>HENDERY ver.</option>
-                <option>KUN ver.</option>
-                <option>LUCAS ver.</option>
-                <option>TEN ver.</option>
-                <option>WINWIN ver.</option>
-                <option>XIAOJUN ver.</option>
-                <option>YANGYANG ver.</option>
-              </select>
-            </div>
 
-            <textarea
-              id="review"
-              class="mt-2 w-full h-32 p-5 border border-gray-200 placeholder-grey-500"
-              placeholder="Write your review..."
-            ></textarea>
-
-            <input
-              type="submit"
-              value="Post"
-              class="mt-2 rounded bg-red-100 p-2 w-20"
-            />
-          </form>
-        </div>
+        <create-reviews></create-reviews>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import CreateReviews from './components/CreateReviews.vue';
 import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
   name: "App",
   components: {
     HelloWorld,
+    CreateReviews,
+  },
+  data() {
+    return {
+      images: [
+        {
+          productid: "wayv001",
+          productsrc: "./assets/images/badge-hendery.jpeg",
+        },
+        {
+          productid: "wayv002",
+          productsrc: "./assets/images/badge-kun.jpeg",
+        },
+        {
+          productid: "wayv003",
+          productsrc: "./assets/images/badge-lucas.jpeg",
+        },
+        {
+          productid: "wayv004",
+          productsrc: "./assets/images/badge-ten.jpeg",
+        },
+        {
+          productid: "wayv005",
+          productsrc: "./assets/images/badge-winwin.jpeg",
+        },
+        {
+          productid: "wayv006",
+          productsrc: "./assets/images/badge-xiaojun.jpeg",
+        },
+        {
+          productid: "wayv007",
+          productsrc: "./assets/images/badge-yangyang.jpeg",
+        },
+      ],
+    };
+  },
+  methods: {
+
   },
 };
 </script>
